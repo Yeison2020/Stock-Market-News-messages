@@ -4,8 +4,8 @@ from twilio.rest import Client
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
-API_KEY_NEWS = "ca33428794bd44da9a788660a8f80932"
-STOCK_API_NEW = "LXOMPFLJOQA935BB"
+API_KEY_NEWS = "NEW API"
+STOCK_API_NEW = "STOCK API"
 
 parameters_STOCK = {"function": "TIME_SERIES_DAILY", "symbol": STOCK_NAME, "apikey": STOCK_API_NEW}
 
@@ -52,8 +52,8 @@ if abs(diff_percent) > 1:
     formatted_articles = [f"{STOCK_NAME}: {up_dowm} {diff_percent}\n Headline : {article['title']}.\n Brief {article['description']}" for article in
                           three_articles]
 
-    account_sid = 'ACdfb18f0714e66f26dcac8cbd15f030d1'
-    auth_token = 'b6639d9bf1b030e5fb25e6474f508d30'
+    account_sid = 'YOUR ID'
+    auth_token = 'TWILIO TOKEN'
     client = Client(account_sid, auth_token)
     for article in formatted_articles:
         message = client.messages.create(
